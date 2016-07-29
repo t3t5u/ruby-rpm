@@ -6,9 +6,9 @@ Release:        1%{?dist}
 License:        Ruby License/GPL - see COPYING
 URL:            http://www.ruby-lang.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-Requires:       readline ncurses gdbm glibc openssl libyaml libffi zlib
-BuildRequires:  readline-devel ncurses-devel gdbm-devel glibc-devel gcc openssl-devel make libyaml-devel libffi-devel zlib-devel
-Source0:        ftp://ftp.ruby-lang.org/pub/ruby/ruby-%{rubyver}.tar.gz
+BuildRequires:  readline-devel ncurses-devel gdbm-devel glibc-devel tcl-devel gcc unzip openssl-devel byacc make libyaml-devel libffi-devel
+Requires:       coreutils gdbm glibc libffi libyaml ncurses-libs pkgconfig openssl readline zlib
+Source0:        ftp://ftp.ruby-lang.org/pub/ruby/ruby-%{rubyver}.tar.bz2
 Summary:        An interpreter of object-oriented scripting language
 Group:          Development/Languages
 Provides: ruby(abi) = 2.3
@@ -17,7 +17,6 @@ Provides: ruby-rdoc
 Provides: ruby-libs
 Provides: ruby-devel
 Provides: rubygems
-Obsoletes: ruby
 Obsoletes: ruby-libs
 Obsoletes: ruby-irb
 Obsoletes: ruby-rdoc
@@ -64,16 +63,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/*
 
 %changelog
-* Tue Apr 26 2016 Takashi Masuda <masutaka@feedforce.jp> - 2.3.1
+* Fri Jul 29 2016 Tetsuro Sano <t3t5u.5an0@gmail.com> - 2.3.1
 - Update ruby version to 2.3.1
 
-* Tue Dec 25 2015 Masato Tanaka <tanaka@feedforce.jp> - 2.3.0
+* Fri Dec 25 2015 Masato Tanaka <tanaka@feedforce.jp> - 2.3.0
 - Update ruby version to 2.3.0
 
-* Tue Dec 17 2015 Masato Tanaka <tanaka@feedforce.jp> - 2.2.4
+* Thu Dec 17 2015 Masato Tanaka <tanaka@feedforce.jp> - 2.2.4
 - Update ruby version to 2.2.4
 
-* Tue Aug 19 2015 Masato Tanaka <tanaka@feedforce.jp> - 2.2.3
+* Wed Aug 19 2015 Masato Tanaka <tanaka@feedforce.jp> - 2.2.3
 - Update ruby version to 2.2.3
 
 * Tue Apr 14 2015 Takashi Masuda <masutaka@feedforce.jp> - 2.2.2
